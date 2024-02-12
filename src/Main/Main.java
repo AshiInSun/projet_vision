@@ -17,7 +17,7 @@ public class Main {
         Carte carte = new Carte();
         Equipe equipe = new Equipe(carte);
         MouseClickR mouseR = new MouseClickR(equipe);
-        Affichage panel = new Affichage(equipe);
+        Affichage panel = new Affichage(equipe, carte);
 
         Redessine redessine = new Redessine(panel);
 
