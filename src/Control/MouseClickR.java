@@ -15,10 +15,6 @@ public class MouseClickR implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         equipe.setPosClick(MouseInfo.getPointerInfo().getLocation());
-        System.out.println("MOUSE////");
-        System.out.println(MouseInfo.getPointerInfo().getLocation().x);
-        System.out.println(MouseInfo.getPointerInfo().getLocation().y);
-        System.out.println("MOUSE----");
         equipe.deplacement();
     }
 

@@ -8,6 +8,7 @@ public class Equipe {
     private Carte map;
     private Point posClick;
     private int id=0;
+    private boolean[] selected;
     private ArrayList<Integer> currentChamp;
 
     public ArrayList<Hero> getTeam(){return  list_hero;}
@@ -18,6 +19,7 @@ public class Equipe {
             list_hero.get(0).deplacement(posClick);
         }
     }
+
 
     private int newID(){int temp = id; id++; return temp;}
 
