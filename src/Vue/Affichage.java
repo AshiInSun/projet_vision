@@ -42,7 +42,13 @@ public class Affichage extends JPanel {
         }
 
         for (int i = 0; i < list_hero.getTeam().size() ; i++) {
-            g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
+            if(list_hero.getTeam().get(i).getSelected()){
+                g.setColor(Color.white);
+                g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
+            }else{
+                g.setColor(Color.black);
+                g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
+            }
         }
     }
 }

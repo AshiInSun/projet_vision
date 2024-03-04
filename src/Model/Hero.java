@@ -9,6 +9,7 @@ public class Hero {
     public int avancement_x=0;
     public int avancement_y=0;
     private int id;
+    private boolean selected = false;
 
     private int ble=0;
 
@@ -29,6 +30,16 @@ public class Hero {
         this.pos_y = 0;
     }
 
+    public Hero(Carte carte, int id, boolean b,int  x, int y){
+        this.id = id;
+        this.map = carte;
+        this.pos_x = x;
+        this.pos_y = y;
+        this.selected = b;
+        ThreadDeplacement tDeplacement = new ThreadDeplacement(this);
+        tDeplacement.start();
+    }
+
     public void deplacement(Point posClick){
         avancement_x = posClick.x-7-pos_x; //Alors là ya des sorcelleries
         avancement_y = posClick.y-30-pos_y;
@@ -44,4 +55,24 @@ public class Hero {
         }
     }
 
+    public void setSelected(boolean b){
+        selected = b;
+    }
+
+    public boolean getSelected(){
+        return selected;
+    }
+
+    public void selectionne(Point p){
+//        System.out.println(p.x);
+//        System.out.println(p.y);
+//        System.out.println(pos_x);
+//        System.out.println(pos_y);
+//        System.out.println(Hitbox.in(p, new Point(pos_x, pos_y), -30, -30));
+        if(Hitbox.in(p, new Point(pos_x, pos_y+30), 20, 20)){
+            selected = true;
+        }else{
+            selected = false;
+        }
+    }
 }

@@ -14,14 +14,21 @@ public class MouseClickR implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        equipe.setPosClick(MouseInfo.getPointerInfo().getLocation());
-        equipe.deplacement();
+        if(e.getButton() == MouseEvent.BUTTON3) {
+            equipe.setPosClick(MouseInfo.getPointerInfo().getLocation());
+            equipe.deplacement();
+        }else{
+            for(int i=0; i<equipe.getTeam().size(); i++){
+                Point a = MouseInfo.getPointerInfo().getLocation();
+                equipe.getTeam().get(i).selectionne(a);
+            }
+            System.out.println("Left click");
+        }
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        equipe.setPosClick(MouseInfo.getPointerInfo().getLocation());
-        equipe.deplacement();
+
     }
 
     @Override
