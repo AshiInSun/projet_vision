@@ -6,6 +6,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
 
 public class Carte {
 
@@ -14,6 +17,10 @@ public class Carte {
     private int numMap[][];
     private int avancement_x=0;
     private int avancement_y=0;
+    // pour chaque point, donne la distance la plus courte depuis la case de départ
+    private Hashtable<Point,Integer> distance = new Hashtable<Point,Integer>();
+    // pour chaque point, donne le point d'avant sur le chemin le plus court depuis la case de départ
+    private Hashtable<Point,Point> parent = new Hashtable<Point,Point>();
 
 
     public int getAvancement_x(){return avancement_x;}
@@ -53,6 +60,78 @@ public class Carte {
             }
             y+=40;
         }
+    }
+
+    public ArrayList<Point> voisins (Point p){
+        ArrayList<Point> res = new ArrayList<Point>();
+        if(p.x!=0){
+            res.add(new Point(p.x-1, p.y));
+        }
+        if(p.x!=SIZEMAP.x){
+            res.add(new Point(p.x+1, p.y));
+        }
+        if(p.y!= 0){
+            res.add(new Point(p.x, p.y-1));
+        }
+        if(p.y!= SIZEMAP.y){
+            res.add(new Point(p.x, p.y+1));
+        }
+
+        return res;
+    }
+
+    public Point pop_meilleur(ArrayList<Point> avoir){
+        Point res = avoir.get(0);
+        for (int i = 1; i < avoir.size(); i++) {
+            if(distance.get(avoir.get(i))<distance.get(res)){
+                res = avoir.get(i);
+            }
+        }
+        return res;
+    }
+
+
+
+    public void update_chemin(Point depart) {
+        distance = new Hashtable<Point,Integer>();
+        distance.put(depart,0);
+        parent = new Hashtable<Point,Point>();
+        parent.put(depart,new Point(-1, -1));
+
+        ArrayList<Point> a_voir = new ArrayList<Point>();
+        a_voir.add(depart);
+
+        while (a_voir.size()>0) {
+            Point p = pop_meilleur(a_voir);
+            a_voir.remove(p);
+            ArrayList<Point> voisins_possibles = voisins(p);
+            int d = distance.get(p)+1;
+            for(Point v : voisins_possibles) {
+                if (distance.contains(v)) {
+                    if (distance.get(v) > d) {
+                        distance.put(v,d);
+                        parent.put(v,p);
+                    }
+                } else {
+                    a_voir.add(v);
+                    distance.put(v,d);
+                    parent.put(v,p);
+                }
+            }
+        }
+
+        // ici, parent et distance sont corrects pour tous les points, par rapport à depart choisi
+    }
+
+    public ArrayList<Point> calcul_chemin(Point cible) {
+        ArrayList<Point> res = new ArrayList<Point>();
+        while (parent.get(cible).x!=-1){
+            res.add(cible);
+            cible = parent.get(cible);
+        }
+        // tant que cible.parent != null, prendre cible.parent et lajouter dans le résultat (au début)
+        // en partant de la cible, on remonte jusqu'à retomber sur notre case de départ
+        return res;
     }
 
     public Carte(){

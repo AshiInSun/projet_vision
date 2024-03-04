@@ -33,6 +33,8 @@ public class Hero {
         avancement_x = posClick.x-7-pos_x; //Alors là ya des sorcelleries
         avancement_y = posClick.y-30-pos_y;
     }
+
+
     public void recolte(){
         int j = pos_x/40;
         int i = pos_y/40;
