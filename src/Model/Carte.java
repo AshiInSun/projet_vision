@@ -21,6 +21,7 @@ public class Carte {
     private Hashtable<Point,Integer> distance = new Hashtable<Point,Integer>();
     // pour chaque point, donne le point d'avant sur le chemin le plus court depuis la case de départ
     private Hashtable<Point,Point> parent = new Hashtable<Point,Point>();
+    private int TILESIZE = 40;
 
 
     public int getAvancement_x(){return avancement_x;}
@@ -28,6 +29,7 @@ public class Carte {
     public Point getSizeMap(){return SIZEMAP;}
     public int[][] getNumMap(){return numMap;}
     public Tile[] getTiles(){return tiles;}
+    public int getTILESIZE(){return TILESIZE;}
 
     public void loadMap(){
         InputStream is = getClass().getResourceAsStream("/img/carte_data.txt");

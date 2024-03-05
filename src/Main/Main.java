@@ -3,6 +3,7 @@ package Main;
 import Control.MouseClickR;
 import Model.Carte;
 import Model.Equipe;
+import Model.Equipe_Monstre;
 import Model.ThreadDeplacement;
 import Vue.Affichage;
 import Vue.Redessine;
@@ -18,8 +19,9 @@ public class Main {
 
         Carte carte = new Carte();
         Equipe equipe = new Equipe(carte);
+        Equipe_Monstre meute = new Equipe_Monstre(carte);
         MouseClickR mouseR = new MouseClickR(equipe);
-        Affichage panel = new Affichage(equipe, carte);
+        Affichage panel = new Affichage(equipe, carte, meute);
 
         Redessine redessine = new Redessine(panel);
 

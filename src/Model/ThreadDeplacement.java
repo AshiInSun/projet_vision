@@ -31,6 +31,7 @@ public class ThreadDeplacement extends Thread{
                 }
                 if(hero.avancement_y==0&&hero.avancement_x==0&& !hero.is_doing){
                     hero.recolte();
+                    hero.fight();
                 }
             try {
                 Thread.sleep(DELAY);

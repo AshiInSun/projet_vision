@@ -15,7 +15,8 @@ public class Equipe_Monstre {
     public void setPosClick(Point p){posClick = p;}
 
     public void deplacement(){
-        if (!list_monstre.isEmpty()) {
+        for (int i = 0; i < list_monstre.size(); i++) {
+
         }
     }
 
@@ -24,7 +25,11 @@ public class Equipe_Monstre {
 
     public Equipe_Monstre(Carte carte){
         this.map = carte;
-        Monstre grubs = new Monstre();
-        list_monstre.add(grubs);
+        Monstre grubs_gaga = new Monstre(new Point(400, 300), newID(), map);
+        Monstre grubs_gougou = new Monstre(new Point(440, 300), newID(), map);
+        Monstre grubs_gigi = new Monstre(new Point(400, 340), newID(), map);
+        list_monstre.add(grubs_gigi);
+        list_monstre.add(grubs_gaga);
+        list_monstre.add(grubs_gougou);
     }
 }

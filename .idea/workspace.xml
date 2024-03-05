@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="ajout barre progression sur la récolte de blé + un peu les monstres">
-      <change afterPath="$PROJECT_DIR$/src/Model/Equipe_Monstre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Monstre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/ThreadDeplacementMonstres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Equipe_Monstre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Equipe_Monstre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Monstre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Monstre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ThreadDeplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ThreadDeplacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Affichage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +63,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -130,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709650151895</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ajout barre progression sur la récolte de blé + un peu les monstres">
+      <created>1709650852554</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709650852554</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
