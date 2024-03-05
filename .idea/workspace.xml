@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="test dijstrak">
-      <change afterPath="$PROJECT_DIR$/src/Model/ThreadRecolte.java" afterDir="false" />
+    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="ajout barre progression sur la récolte de blé + un peu les monstres">
+      <change afterPath="$PROJECT_DIR$/src/Model/Equipe_Monstre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Monstre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Equipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Equipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ThreadDeplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ThreadDeplacement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Affichage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709567703519</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ajout barre progression sur la récolte de blé">
+      <created>1709650151895</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709650151895</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +152,8 @@
     <MESSAGE value="first commit movement fluid" />
     <MESSAGE value="ajout map" />
     <MESSAGE value="test dijstrak" />
-    <option name="LAST_COMMIT_MESSAGE" value="test dijstrak" />
+    <MESSAGE value="ajout barre progression sur la récolte de blé" />
+    <MESSAGE value="ajout barre progression sur la récolte de blé + un peu les monstres" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout barre progression sur la récolte de blé + un peu les monstres" />
   </component>
 </project>

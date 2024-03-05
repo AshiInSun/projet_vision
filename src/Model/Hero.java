@@ -7,10 +7,13 @@ public class Hero {
     private int pos_x;
     private int pos_y;
     public int avancement_x=0;
-    public boolean is_doing = false;
     public int avancement_y=0;
+    public boolean is_doing = false;
     public int barre_progression=0;
     private int id;
+    //stats
+    private int PV = 100;
+    private int AD = 20;
 
     private int ble=0;
 
