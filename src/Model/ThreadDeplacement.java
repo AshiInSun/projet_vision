@@ -29,7 +29,7 @@ public class ThreadDeplacement extends Thread{
                     hero.avancement_y++;
                     hero.setY(hero.getY()-1);
                 }
-                if(hero.avancement_y==0&&hero.avancement_x==0){
+                if(hero.avancement_y==0&&hero.avancement_x==0&& !hero.is_doing){
                     hero.recolte();
                 }
             try {

@@ -16,6 +16,8 @@ public class Equipe {
 
     public void deplacement(){
         if (!list_hero.isEmpty()) {
+            if (!list_hero.get(0).is_doing)   //ATTENZIONE MATHIAS FAUT FAIRE GAFFE AVEC LES BAILS D4EQUIPE TT ET TT ça empeche qu'un connard bouge quand il est entrain de faire qqchose
+                //comme une récolte, mais aussi un combat par exemple
             list_hero.get(0).deplacement(posClick);
         }
     }

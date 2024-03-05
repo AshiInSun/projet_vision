@@ -42,7 +42,12 @@ public class Affichage extends JPanel {
         }
 
         for (int i = 0; i < list_hero.getTeam().size() ; i++) {
+            g.setColor(Color.BLACK);
             g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
+            if(list_hero.getTeam().get(i).is_doing){
+                g.setColor(Color.GREEN);
+                g.fillRect(list_hero.getTeam().get(i).getX()-5, list_hero.getTeam().get(i).getY()-20, (list_hero.getTeam().get(i).barre_progression)/58, 10);//valeur un peu random mais tkt ça marche bien
+            }
         }
     }
 }
