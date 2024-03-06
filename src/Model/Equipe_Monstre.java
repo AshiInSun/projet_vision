@@ -31,5 +31,10 @@ public class Equipe_Monstre {
         list_monstre.add(grubs_gigi);
         list_monstre.add(grubs_gaga);
         list_monstre.add(grubs_gougou);
+        /// boucle for qui fait un thread de deplacement par monstre
+        for (int i = 0; i < list_monstre.size(); i++) {
+            ThreadDeplacementMonstres threadDeplacementMonstres = new ThreadDeplacementMonstres(list_monstre.get(i));
+            threadDeplacementMonstres.start();
+        }
     }
 }

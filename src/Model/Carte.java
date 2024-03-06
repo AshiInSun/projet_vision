@@ -30,7 +30,6 @@ public class Carte {
     public int[][] getNumMap(){return numMap;}
     public Tile[] getTiles(){return tiles;}
     public int getTILESIZE(){return TILESIZE;}
-
     public void loadMap(){
         InputStream is = getClass().getResourceAsStream("/img/carte_data.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
