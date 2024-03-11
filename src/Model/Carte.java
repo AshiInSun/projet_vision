@@ -30,6 +30,19 @@ public class Carte {
     public int[][] getNumMap(){return numMap;}
     public Tile[] getTiles(){return tiles;}
     public int getTILESIZE(){return TILESIZE;}
+
+
+    public Carte(){
+        numMap = new int[SIZEMAP.y][SIZEMAP.x];
+        loadMap();
+        loadTile();
+//        tiles = new Tile[10];
+//        tiles[0] = new Tile(0, 0, 1);
+//        tiles[1] = new Tile(40, 0, 0);
+
+    }
+
+
     public void loadMap(){
         InputStream is = getClass().getResourceAsStream("/img/carte_data.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
@@ -63,19 +76,31 @@ public class Carte {
         }
     }
 
-    public ArrayList<Point> voisins (Point p){
+    public ArrayList<Point> voisins (Point p, ArrayList<Point> deja_vu){
         ArrayList<Point> res = new ArrayList<Point>();
         if(p.x!=0){
-            res.add(new Point(p.x-1, p.y));
+            Point p2 = new Point(p.x-1, p.y);
+            if (!deja_vu.contains(p2)) {
+                res.add(p2);
+            }
         }
         if(p.x!=SIZEMAP.x){
-            res.add(new Point(p.x+1, p.y));
+            Point p2 = new Point(p.x+1, p.y);
+            if (!deja_vu.contains(p2)) {
+                res.add(p2);
+            }
         }
         if(p.y!= 0){
-            res.add(new Point(p.x, p.y-1));
+            Point p2 = new Point(p.x, p.y-1);
+            if (!deja_vu.contains(p2)) {
+                res.add(p2);
+            }
         }
         if(p.y!= SIZEMAP.y){
-            res.add(new Point(p.x, p.y+1));
+            Point p2 = new Point(p.x, p.y+1);
+            if (!deja_vu.contains(p2)) {
+                res.add(p2);
+            }
         }
 
         return res;
@@ -83,9 +108,12 @@ public class Carte {
 
     public Point pop_meilleur(ArrayList<Point> avoir){
         Point res = avoir.get(0);
+        int d = distance.get(res);
         for (int i = 1; i < avoir.size(); i++) {
-            if(distance.get(avoir.get(i))<distance.get(res)){
-                res = avoir.get(i);
+            Point p = avoir.get(i);
+            if(distance.get(p)<d){
+                res = p;
+                d = distance.get(res);
             }
         }
         return res;
@@ -102,10 +130,13 @@ public class Carte {
         ArrayList<Point> a_voir = new ArrayList<Point>();
         a_voir.add(depart);
 
+        ArrayList<Point> deja_vu = new ArrayList<Point>();
+
         while (a_voir.size()>0) {
             Point p = pop_meilleur(a_voir);
             a_voir.remove(p);
-            ArrayList<Point> voisins_possibles = voisins(p);
+            deja_vu.add(p);
+            ArrayList<Point> voisins_possibles = voisins(p,deja_vu);
             int d = distance.get(p)+1;
             for(Point v : voisins_possibles) {
                 if (distance.contains(v)) {
@@ -133,16 +164,6 @@ public class Carte {
         // tant que cible.parent != null, prendre cible.parent et lajouter dans le résultat (au début)
         // en partant de la cible, on remonte jusqu'à retomber sur notre case de départ
         return res;
-    }
-
-    public Carte(){
-        numMap = new int[SIZEMAP.y][SIZEMAP.x];
-        loadMap();
-        loadTile();
-//        tiles = new Tile[10];
-//        tiles[0] = new Tile(0, 0, 1);
-//        tiles[1] = new Tile(40, 0, 0);
-
     }
 
     public void recolte(int i, int j){

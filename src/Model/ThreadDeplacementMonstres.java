@@ -30,6 +30,11 @@ public class ThreadDeplacementMonstres extends Thread{
                     monstre.setY(monstre.getY() - 1);
                 }
                 if (monstre.avancement_y == 0 && monstre.avancement_x == 0) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     monstre.deplace();
                 }
                 try {

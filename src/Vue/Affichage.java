@@ -37,6 +37,7 @@ public class Affichage extends JPanel {
             g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
         }
 
+        //AFFICHAGE TILES
         for (int i = 0; i < carte.getTiles().length; i++) {
             Tile current = carte.getTiles()[i];
             if(current!=null){

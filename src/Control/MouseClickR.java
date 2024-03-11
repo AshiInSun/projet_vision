@@ -14,13 +14,13 @@ public class MouseClickR implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        equipe.setPosClick(MouseInfo.getPointerInfo().getLocation());
+        equipe.setPosClick(e.getPoint());
         equipe.deplacement();
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        equipe.setPosClick(MouseInfo.getPointerInfo().getLocation());
+        equipe.setPosClick(e.getPoint());
         equipe.deplacement();
     }
 

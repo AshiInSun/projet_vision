@@ -26,11 +26,11 @@ public class Main {
         Redessine redessine = new Redessine(panel);
 
 
-        /*carte.update_chemin(new Point(12, 8));
+        carte.update_chemin(new Point(12, 8));
         ArrayList<Point> test = carte.calcul_chemin(new Point(15, 10));
         for (int i = 0; i < test.size(); i++) {
            System.out.println(test.get(i).x + test.get(i).y);
-        }*/
+        }
         maFenetre.add(panel);
         panel.addMouseListener(mouseR);
 
