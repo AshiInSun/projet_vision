@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="les monstres ont un deplacement aleatoire controlé">
+    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="leger amelioration sur Dijstrak">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/MouseClickR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/MouseClickR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ThreadDeplacementMonstres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ThreadDeplacementMonstres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Affichage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709742550455</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="leger amelioration sur Dijstrak">
+      <created>1710169714451</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710169714451</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +182,7 @@
     <MESSAGE value="ajout barre progression sur la récolte de blé + un peu les monstres" />
     <MESSAGE value="on avance sur les lmonbstres" />
     <MESSAGE value="les monstres ont un deplacement aleatoire controlé" />
-    <option name="LAST_COMMIT_MESSAGE" value="les monstres ont un deplacement aleatoire controlé" />
+    <MESSAGE value="leger amelioration sur Dijstrak" />
+    <option name="LAST_COMMIT_MESSAGE" value="leger amelioration sur Dijstrak" />
   </component>
 </project>
