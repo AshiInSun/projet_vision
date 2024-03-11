@@ -23,6 +23,7 @@ public class Main {
 
         maFenetre.add(panel);
         panel.addMouseListener(mouseR);
+        panel.addMouseMotionListener(mouseR);
 
         redessine.start();
         maFenetre.pack();

@@ -41,8 +41,8 @@ public class Hero {
     }
 
     public void deplacement(Point posClick){
-        avancement_x = posClick.x-7-pos_x; //Alors là ya des sorcelleries
-        avancement_y = posClick.y-30-pos_y;
+        avancement_x = posClick.x-pos_x; //Alors là ya des sorcelleries
+        avancement_y = posClick.y-pos_y;
     }
     public void recolte(){
         int j = pos_x/40;
@@ -69,10 +69,34 @@ public class Hero {
 //        System.out.println(pos_x);
 //        System.out.println(pos_y);
 //        System.out.println(Hitbox.in(p, new Point(pos_x, pos_y), -30, -30));
-        if(Hitbox.in(p, new Point(pos_x, pos_y+30), 20, 20)){
+        if(Hitbox.in(p, new Point(pos_x, pos_y), 20, 20)){
             selected = true;
         }else{
             selected = false;
+        }
+    }
+
+    public void selectionneZone(Point p1, Point p2){
+        if(p1.x<p2.x){
+            if(p1.y<p2.y){
+                if(Hitbox.in(new Point(pos_x, pos_y), p1, p2.x-p1.x, p2.y-p1.y)){
+                    selected = true;
+                }
+            }else{
+                if(Hitbox.in(new Point(pos_x, pos_y), new Point(p1.x, p2.y), p2.x-p1.x, p1.y-p2.y)){
+                    selected = true;
+                }
+            }
+        }else{
+            if(p1.y<p2.y){
+                if(Hitbox.in(new Point(pos_x, pos_y), new Point(p2.x, p1.y), p1.x-p2.x, p2.y-p1.y)){
+                    selected = true;
+                }
+            }else{
+                if(Hitbox.in(new Point(pos_x, pos_y), p2, p1.x-p2.x, p1.y-p2.y)){
+                    selected = true;
+                }
+            }
         }
     }
 }

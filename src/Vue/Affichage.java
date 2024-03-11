@@ -11,6 +11,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+import static java.lang.Math.abs;
+
 public class Affichage extends JPanel {
 
     private Equipe list_hero;
@@ -50,5 +52,15 @@ public class Affichage extends JPanel {
                 g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
             }
         }
+
+        if(list_hero.getZoneSelection().getheightRectangle() != 0 || list_hero.getZoneSelection().getwitdhRectangle() != 0){
+            if(list_hero.getZoneSelection().getwitdhRectangle() < 0){
+               list_hero.getZoneSelection().setXRectangle(list_hero.getZoneSelection().getXRectangle() + list_hero.getZoneSelection().getwitdhRectangle());
+               list_hero.getZoneSelection().setWitdhRectangle(-list_hero.getZoneSelection().getwitdhRectangle());
+            }
+            g.setColor(Color.red);
+            g.drawRect(list_hero.getZoneSelection().getXRectangle(), list_hero.getZoneSelection().getYRectangle(), list_hero.getZoneSelection().getwitdhRectangle(), list_hero.getZoneSelection().getheightRectangle());
+        }
+
     }
 }

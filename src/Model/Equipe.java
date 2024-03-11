@@ -10,6 +10,7 @@ public class Equipe {
     private int id=0;
     private boolean[] selected;
     private ArrayList<Integer> currentChamp;
+    private ZoneSelection zoneSelection;
 
     public ArrayList<Hero> getTeam(){return  list_hero;}
     public void setPosClick(Point p){posClick = p;}
@@ -34,8 +35,17 @@ public class Equipe {
         Hero jhon = new Hero(map, newID(),false,  20, 20);
         list_hero.add(tim);
         list_hero.add(jhon);
+        zoneSelection = new ZoneSelection(new Rectangle(0,0,0,0));
         ///Il faudra faire un thread de deplacement par connard
 //        ThreadDeplacement tDeplacement = new ThreadDeplacement(list_hero.get(0));
 //        tDeplacement.start();
+    }
+
+    public void SetzoneSelection(ZoneSelection zoneSelection){
+        this.zoneSelection = zoneSelection;
+    }
+
+    public ZoneSelection getZoneSelection() {
+        return zoneSelection;
     }
 }
