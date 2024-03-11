@@ -20,6 +20,9 @@ public class Equipe {
         }
     }
 
+    public ArrayList<Hero> getList_hero() {
+        return list_hero;
+    }
 
     private int newID(){int temp = id; id++; return temp;}
 

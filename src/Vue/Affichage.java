@@ -2,6 +2,7 @@ package Vue;
 
 import Model.Carte;
 import Model.Equipe;
+import Model.Inventory;
 import Model.Tile;
 
 import javax.imageio.ImageIO;
@@ -19,14 +20,12 @@ public class Affichage extends JPanel {
     public Affichage(Equipe list_hero, Carte carte){
         this.carte = carte;
         this.list_hero = list_hero;
-        setPreferredSize(new Dimension(1120, 680));
     }
 
     @Override
     public void paint(Graphics g){
 
         Graphics2D g2d = (Graphics2D) g;
-
 
         super.paint(g);
 

@@ -1,6 +1,9 @@
 package Model;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observer;
 
 public class Hero {
     private Carte map;
@@ -29,17 +32,21 @@ public class Hero {
         this.pos_y = 0;
     }
 
+    public int getBle() {
+        return ble;
+    }
+
     public void deplacement(Point posClick){
         avancement_x = posClick.x-7-pos_x; //Alors là ya des sorcelleries
         avancement_y = posClick.y-30-pos_y;
     }
+
     public void recolte(){
         int j = pos_x/40;
         int i = pos_y/40;
         int index = i*map.getSizeMap().x + j;
         if(map.getTiles()[index].type==2){
             ble++;
-            System.out.println(ble);
             map.recolte(i, j);
         }
     }

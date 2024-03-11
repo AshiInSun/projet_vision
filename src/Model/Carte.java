@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 public class Carte {
 
     private static final Point SIZEMAP = new Point(28, 17);
+    private Inventory inventaire;
     private Tile[] tiles;
     private int numMap[][];
     private int avancement_x=0;
