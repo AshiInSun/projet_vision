@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="leger amelioration sur Dijstrak">
+    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="chat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Equipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Equipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Equipe_Monstre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Equipe_Monstre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Monstre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Monstre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ThreadDeplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ThreadDeplacement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,25 +29,17 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="57107eaa5a7725845f546bb71b578b8e638a9acf" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2cGH8jUoH1oEpirYeiG4wXH2v8P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -50,14 +48,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "tim",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Model" />
@@ -66,8 +75,6 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-19.0.1" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="projet_vision" />
       <extension name="coverage">
@@ -86,6 +93,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+        <option value="jdk-19.0.2-corretto-19.0.2-f644763e9732-1e16d6ec" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -97,6 +112,10 @@
       <workItem from="1707730842755" duration="9803000" />
       <workItem from="1707766100953" duration="6344000" />
       <workItem from="1707856722296" duration="5200000" />
+      <workItem from="1707862029603" duration="636000" />
+      <workItem from="1707863833249" duration="421000" />
+      <workItem from="1710423609134" duration="608000" />
+      <workItem from="1710424740422" duration="4099000" />
     </task>
     <task id="LOCAL-00001" summary="first commit movement fluid">
       <option name="closed" value="true" />
@@ -114,49 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707772436616</updated>
     </task>
-    <task id="LOCAL-00003" summary="test dijstrak">
-      <created>1709567703519</created>
+    <task id="LOCAL-00003" summary="ajout ble + recolte + repousse">
+      <option name="closed" value="true" />
+      <created>1707862065765</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1709567703519</updated>
+      <updated>1707862065765</updated>
     </task>
-    <task id="LOCAL-00004" summary="ajout barre progression sur la récolte de blé">
-      <created>1709650151895</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1709650151895</updated>
-    </task>
-    <task id="LOCAL-00005" summary="ajout barre progression sur la récolte de blé + un peu les monstres">
-      <created>1709650852554</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1709650852554</updated>
-    </task>
-    <task id="LOCAL-00006" summary="on avance sur les lmonbstres">
-      <created>1709657915263</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1709657915263</updated>
-    </task>
-    <task id="LOCAL-00007" summary="les monstres ont un deplacement aleatoire controlé">
-      <created>1709742550455</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1709742550455</updated>
-    </task>
-    <task id="LOCAL-00008" summary="leger amelioration sur Dijstrak">
-      <created>1710169714451</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1710169714451</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,12 +162,33 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit movement fluid" />
     <MESSAGE value="ajout map" />
-    <MESSAGE value="test dijstrak" />
-    <MESSAGE value="ajout barre progression sur la récolte de blé" />
-    <MESSAGE value="ajout barre progression sur la récolte de blé + un peu les monstres" />
-    <MESSAGE value="on avance sur les lmonbstres" />
-    <MESSAGE value="les monstres ont un deplacement aleatoire controlé" />
-    <MESSAGE value="leger amelioration sur Dijstrak" />
-    <option name="LAST_COMMIT_MESSAGE" value="leger amelioration sur Dijstrak" />
+    <MESSAGE value="ajout ble + recolte + repousse" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout ble + recolte + repousse" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Model/ThreadDeplacement.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Model/ThreadDeplacement.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((ThreadDeplacement)this).extentLocalBindings" custom="Model.ThreadDeplacement" />
+        <watch expression="((ThreadDeplacement)this).extentLocalBindings" custom="Model.ThreadDeplacement" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

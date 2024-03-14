@@ -1,6 +1,7 @@
 package Model;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Hero {
     public Carte map;
@@ -17,9 +18,13 @@ public class Hero {
 
     private int ble=0;
 
-    public int getX(){return pos_x - map.getAvancement_x();}
+    public int getX(){return pos_x;}
+    public void incrX(){pos_x+=1;}
+    public void incrY(){pos_y+=1;}
+    public void decrX(){pos_x-=1;}
+    public void decrY(){pos_y-=1;}
     public void setX(int x){pos_x=x;}
-    public int getY(){return pos_y - map.getAvancement_y();}
+    public int getY(){return pos_y;}
     public void setY(int y){pos_y=y;}
     public int getID(){return id;}
     public void setID(int i){this.id = i;}
@@ -35,9 +40,11 @@ public class Hero {
         this.pos_y = 0;
     }
 
-    public void deplacement(Point posClick){
-        avancement_x = posClick.x-pos_x;
-        avancement_y = posClick.y-pos_y;
+    public void deplacement(ArrayList<Point> chemin){
+        if(!is_doing) {
+            ThreadDeplacement tDeplacement = new ThreadDeplacement(this, chemin);
+            tDeplacement.start();
+        }
     }
 
 

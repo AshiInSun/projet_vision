@@ -66,13 +66,7 @@ public class Monstre {
         Random rand = new Random();
         int n = rand.nextInt(CASES.size());
         Point p = CASES.get(n);
-        //print la size de cases
-        System.out.println(CASES.size());
         //print toutes les cases de CASES
-        for (int i = 0; i < CASES.size(); i++) {
-            System.out.println(i);
-            System.out.println(CASES.get(i));
-        }
         avancement_x = p.x - pos.x;
         avancement_y = p.y - pos.y;
     }

@@ -3,6 +3,7 @@ package Model;
 import java.awt.*;
 import java.util.ArrayList;
 
+
 public class Equipe_Monstre {
     private ArrayList<Monstre> list_monstre = new ArrayList<Monstre>();
     private Carte map;

@@ -139,7 +139,7 @@ public class Carte {
             ArrayList<Point> voisins_possibles = voisins(p,deja_vu);
             int d = distance.get(p)+1;
             for(Point v : voisins_possibles) {
-                if (distance.contains(v)) {
+                if (distance.containsKey(v)) {
                     if (distance.get(v) > d) {
                         distance.put(v,d);
                         parent.put(v,p);
