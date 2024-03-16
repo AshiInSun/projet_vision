@@ -15,7 +15,7 @@ public class ThreadRecolte extends Thread{
 
     @Override
     public void run(){
-        hero.is_doing = true;
+        hero.setIs_doing(true);
         while (timer>0){
             try {
                 Thread.sleep(DELAY);
@@ -30,6 +30,6 @@ public class ThreadRecolte extends Thread{
         hero.map.recolte(tile.x, tile.y);
         hero.plusBle();
         System.out.println(hero.getBle());
-        hero.is_doing=false;
+        hero.setIs_doing(false);
     }
 }

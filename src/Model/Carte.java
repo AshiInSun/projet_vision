@@ -78,26 +78,53 @@ public class Carte {
 
     public ArrayList<Point> voisins (Point p, ArrayList<Point> deja_vu){
         ArrayList<Point> res = new ArrayList<Point>();
-        if(p.x!=0){
+        if(p.x!=0 && numMap[p.y][p.x-1]!=1){
             Point p2 = new Point(p.x-1, p.y);
             if (!deja_vu.contains(p2)) {
                 res.add(p2);
             }
+
         }
-        if(p.x!=SIZEMAP.x){
+        if(p.x!=SIZEMAP.x && numMap[p.y][p.x+1]!=1){
             Point p2 = new Point(p.x+1, p.y);
             if (!deja_vu.contains(p2)) {
                 res.add(p2);
             }
         }
-        if(p.y!= 0){
+        if(p.y!= 0 && numMap[p.y-1][p.x]!=1){
             Point p2 = new Point(p.x, p.y-1);
             if (!deja_vu.contains(p2)) {
                 res.add(p2);
             }
         }
-        if(p.y!= SIZEMAP.y){
+        if(p.y!= SIZEMAP.y && numMap[p.y+1][p.x]!=1){
             Point p2 = new Point(p.x, p.y+1);
+            if (!deja_vu.contains(p2)) {
+                res.add(p2);
+            }
+        }
+
+        //on test si les if de limites ont vraiment une importance dans l'implémentation des voisins diagonaux
+        if(p.x!=0 && p.y!=0 && numMap[p.y-1][p.x-1]!=1){
+            Point p2 = new Point(p.x-1, p.y-1);
+            if (!deja_vu.contains(p2)) {
+                res.add(p2);
+            }
+        }
+        if(p.x!=SIZEMAP.x && p.y!=0 && numMap[p.y-1][p.x+1]!=1){
+            Point p2 = new Point(p.x+1, p.y-1);
+            if (!deja_vu.contains(p2)) {
+                res.add(p2);
+            }
+        }
+        if(p.x!=0 && p.y!=SIZEMAP.y && numMap[p.y+1][p.x-1]!=1){
+            Point p2 = new Point(p.x-1, p.y+1);
+            if (!deja_vu.contains(p2)) {
+                res.add(p2);
+            }
+        }
+        if(p.x!=SIZEMAP.x && p.y!=SIZEMAP.y && numMap[p.y+1][p.x+1]!=1){
+            Point p2 = new Point(p.x+1, p.y+1);
             if (!deja_vu.contains(p2)) {
                 res.add(p2);
             }
@@ -132,7 +159,7 @@ public class Carte {
 
         ArrayList<Point> deja_vu = new ArrayList<Point>();
 
-        while (a_voir.size()>0) {
+        while (!a_voir.isEmpty()) {
             Point p = pop_meilleur(a_voir);
             a_voir.remove(p);
             deja_vu.add(p);

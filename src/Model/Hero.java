@@ -5,11 +5,15 @@ import java.util.ArrayList;
 
 public class Hero {
     public Carte map;
+    private boolean new_move = false;
     private int pos_x;
     private int pos_y;
+    boolean is_moving;
+    public boolean tile_checked=true;
+    int id_thread=0;
     public int avancement_x=0;
     public int avancement_y=0;
-    public boolean is_doing = false;
+    private boolean is_doing = false;
     public int barre_progression=0;
     private int id;
     //stats
@@ -30,19 +34,25 @@ public class Hero {
     public void setID(int i){this.id = i;}
     public void plusBle(){this.ble++;}
     public int getBle(){return this.ble;}
-
-
+    public void setIs_moving(boolean b){is_moving=b;}
+    public boolean is_doing(){return is_doing;}
+    public void setIs_doing(boolean b){is_doing=b;}
+    public boolean getNew_move(){return new_move;}
+    public void setNew_move(boolean b){new_move=b;}
 
     public Hero(Carte carte, int id){
         this.id = id;
         this.map = carte;
-        this.pos_x = 0;
-        this.pos_y = 0;
+        this.pos_x = 240;
+        this.pos_y = 160;
+        ThreadChecked tChecked = new ThreadChecked(this);
+        tChecked.start();
     }
 
     public void deplacement(ArrayList<Point> chemin){
-        if(!is_doing) {
-            ThreadDeplacement tDeplacement = new ThreadDeplacement(this, chemin);
+        if(!is_doing && !is_moving) {
+            ThreadDeplacement tDeplacement = new ThreadDeplacement(this, chemin, id_thread);
+            id_thread++;
             tDeplacement.start();
         }
     }

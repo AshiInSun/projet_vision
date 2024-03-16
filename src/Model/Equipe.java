@@ -13,13 +13,16 @@ public class Equipe {
 
     public ArrayList<Hero> getTeam(){return  list_hero;}
     public void setPosClick(Point p){posClick = p;}
+    public Carte getMap(){return map;}
 
     public void deplacement(){
         map.update_chemin(new Point(posClick.x/map.getTILESIZE(), posClick.y/map.getTILESIZE()));
 
         if (!list_hero.isEmpty()) {
-            if (!list_hero.get(0).is_doing){
-                ArrayList<Point> chemin = map.calcul_chemin(new Point(list_hero.get(0).getX(), list_hero.get(0).getY()));
+            if (!list_hero.get(0).is_doing()){
+                Point cible = new Point(posClick.x/map.getTILESIZE(), posClick.y/map.getTILESIZE());
+                ArrayList<Point> chemin = map.calcul_chemin(new Point(list_hero.get(0).getX()/map.getTILESIZE(), list_hero.get(0).getY()/map.getTILESIZE()));
+                chemin.add(cible);
                 list_hero.get(0).deplacement(chemin);
             }
         }
