@@ -54,10 +54,10 @@ public class Affichage extends JPanel {
         }
 
         if(list_hero.getZoneSelection().getheightRectangle() != 0 || list_hero.getZoneSelection().getwitdhRectangle() != 0){
-            if(list_hero.getZoneSelection().getwitdhRectangle() < 0){
+            /*if(list_hero.getZoneSelection().getwitdhRectangle() < 0){
                list_hero.getZoneSelection().setXRectangle(list_hero.getZoneSelection().getXRectangle() + list_hero.getZoneSelection().getwitdhRectangle());
                list_hero.getZoneSelection().setWitdhRectangle(-list_hero.getZoneSelection().getwitdhRectangle());
-            }
+            }*/
             g.setColor(Color.red);
             g.drawRect(list_hero.getZoneSelection().getXRectangle(), list_hero.getZoneSelection().getYRectangle(), list_hero.getZoneSelection().getwitdhRectangle(), list_hero.getZoneSelection().getheightRectangle());
         }

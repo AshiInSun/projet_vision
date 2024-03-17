@@ -2,6 +2,7 @@ package Model;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.awt.Rectangle;
 
 public class Equipe {
     private ArrayList<Hero> list_hero = new ArrayList<Hero>();

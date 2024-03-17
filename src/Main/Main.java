@@ -2,6 +2,7 @@ package Main;
 
 import Control.MouseClickR;
 import Model.Carte;
+import Model.ZoneSelection;
 import Model.Equipe;
 import Model.ThreadDeplacement;
 import Vue.Affichage;
