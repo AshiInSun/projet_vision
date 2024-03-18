@@ -34,6 +34,7 @@ public class Equipe {
         this.map = carte;
         Hero tim = new Hero(map, newID(),true, 0, 0);
         Hero jhon = new Hero(map, newID(),false,  20, 20);
+        Boutique b = new Boutique(map, 260, 40);
         list_hero.add(tim);
         list_hero.add(jhon);
         zoneSelection = new ZoneSelection(new Rectangle(0,0,0,0));

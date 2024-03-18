@@ -52,6 +52,13 @@ public class Tile {
                     throw new RuntimeException(e);
                 }
                 break;
+            case 5:
+                try {
+                    image = ImageIO.read(getClass().getResourceAsStream("/img/bb.png"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                break;
             case 6:
                 try {
                     image = ImageIO.read(getClass().getResourceAsStream("/img/herbe_eauG.png"));
