@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="ajout map">
-      <change afterPath="$PROJECT_DIR$/src/Model/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/ItemType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/PanelRound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vue/InventoryVue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="ajout inventaire et la vue de l'inventaire">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/MouseClickR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/MouseClickR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Equipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Equipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ThreadRepousse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ThreadRepousse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Affichage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vue/Redessine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Redessine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/InventoryVue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/InventoryVue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,8 +46,12 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
@@ -62,7 +61,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Ahmed&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -70,7 +69,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -121,7 +120,10 @@
       <workItem from="1709928627457" duration="6136000" />
       <workItem from="1709995492286" duration="1275000" />
       <workItem from="1710149471503" duration="1303000" />
-      <workItem from="1710162660074" duration="640000" />
+      <workItem from="1710162660074" duration="1092000" />
+      <workItem from="1710163780072" duration="5175000" />
+      <workItem from="1710508409089" duration="177000" />
+      <workItem from="1710767289041" duration="1190000" />
     </task>
     <task id="LOCAL-00001" summary="first commit movement fluid">
       <option name="closed" value="true" />
@@ -139,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707772436616</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ajout inventaire et la vue de l'inventaire">
+      <option name="closed" value="true" />
+      <created>1710163644468</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710163644468</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +170,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit movement fluid" />
     <MESSAGE value="ajout map" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout map" />
+    <MESSAGE value="ajout inventaire et la vue de l'inventaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout inventaire et la vue de l'inventaire" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

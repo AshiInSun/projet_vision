@@ -37,8 +37,8 @@ public class Hero {
     }
 
     public void deplacement(Point posClick){
-        avancement_x = posClick.x-7-pos_x; //Alors là ya des sorcelleries
-        avancement_y = posClick.y-30-pos_y;
+        avancement_x = posClick.x-pos_x;
+        avancement_y = posClick.y-pos_y;
     }
 
     public void recolte(){
