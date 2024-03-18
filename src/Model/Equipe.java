@@ -7,7 +7,7 @@ public class Equipe {
     private ArrayList<Hero> list_hero = new ArrayList<Hero>();
     private Carte map;
     private Point posClick;
-    private int id=37;
+    private int id=0;
     private boolean[] selected;
     private ArrayList<Integer> currentChamp;
 
@@ -15,18 +15,17 @@ public class Equipe {
     public void setPosClick(Point p){posClick = p;}
     public Carte getMap(){return map;}
 
+    /** cette méthode est appelée lorsqu'on clic pour demander un déplacement */
     public void deplacement(){
-        map.update_chemin(new Point(posClick.x/map.getTILESIZE(), posClick.y/map.getTILESIZE()));
+        Point cible = new Point(posClick.x/map.getTILESIZE(), posClick.y/map.getTILESIZE());
+        map.update_chemin(cible);
 
         if (!list_hero.isEmpty()) {
-            if (!list_hero.get(0).is_doing()){
-                Point cible = new Point(posClick.x/map.getTILESIZE(), posClick.y/map.getTILESIZE());
-                ArrayList<Point> chemin = map.calcul_chemin(new Point(list_hero.get(0).getX()/map.getTILESIZE(), list_hero.get(0).getY()/map.getTILESIZE()));
-                chemin.add(cible);
-                list_hero.get(0).deplacement(chemin);
-            }
+                // sur un seul héros pour l'instant
+                list_hero.get(0).deplacement(cible);
         }
     }
+
 
 
     private int newID(){int temp = id; id++; return temp;}
@@ -36,7 +35,7 @@ public class Equipe {
         Hero tim = new Hero(map, newID());
         list_hero.add(tim);
         ///Il faudra faire un thread de deplacement par connard
-        ///ThreadDeplacement tDeplacement = new ThreadDeplacement(list_hero.get(0));
-        ///tDeplacement.start();
+        //ThreadDeplacement tDeplacement = new ThreadDeplacement(list_hero.get(0));
+        //tDeplacement.start();
     }
 }

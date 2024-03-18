@@ -8,26 +8,36 @@ import java.util.ArrayList;
 public class ThreadDeplacement extends Thread{
     private Hero hero;
     private ArrayList<Point> chemin;
+    private Point cible;
 
     public int DELAY=5;
     private int avancement_x=0;
     private int avancement_y=0;
-    private int id;
 
-    public ThreadDeplacement(Hero hero, ArrayList<Point> chemin, int id){
+    private boolean isMoving = true;
+
+    public void stopMoving(){
+        isMoving = false;
+    }
+
+    public ThreadDeplacement(Hero hero, Point cible){
         this.hero = hero;
-        this.chemin = chemin;
-        this.id = id;
+        this.cible = cible;
     }
 
     @Override
     public void run(){
-        hero.setIs_moving(true);
-        for (int i=0; i < chemin.size(); i++) {
+        int i = 1;
+        Point p = new Point(hero.getX()/hero.map.getTILESIZE(), hero.getY()/hero.map.getTILESIZE());
+        ArrayList<Point> chemin = hero.map.calcul_chemin(p);
+        chemin.add(cible);
+
+
+        while (i < chemin.size() && isMoving) {
             avancement_x = (chemin.get(i).x)*hero.map.getTILESIZE() - hero.getX();
             avancement_y = (chemin.get(i).y)*hero.map.getTILESIZE() - hero.getY();
 
-            while ((avancement_x != 0 || avancement_y != 0)/*&&hero.id_thread==id*/) {
+            while ((avancement_x != 0 || avancement_y != 0)) {
                 if (avancement_x > 0) {
                     hero.incrX();
                     avancement_x -= 1;
@@ -50,9 +60,9 @@ public class ThreadDeplacement extends Thread{
                     e.printStackTrace();
                 }
             }
+            i++;
         }
-
-        hero.setIs_moving(false);
         hero.tile_checked = false;
     }
+
 }

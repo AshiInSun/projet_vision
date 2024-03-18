@@ -183,6 +183,9 @@ public class Carte {
     }
 
     public ArrayList<Point> calcul_chemin(Point cible) {
+        // vérifier que cible est accessible (donc elle est dans distance/parent)
+        // sinon renvoyer un chemin null
+
         ArrayList<Point> res = new ArrayList<Point>();
         while (parent.get(cible).x!=-1){
             res.add(cible);

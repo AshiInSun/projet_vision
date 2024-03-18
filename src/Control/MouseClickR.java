@@ -20,8 +20,6 @@ public class MouseClickR implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        equipe.setPosClick(e.getPoint());
-        equipe.deplacement();
     }
 
     @Override
