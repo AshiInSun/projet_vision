@@ -23,8 +23,9 @@ public class MouseClickR implements MouseListener, MouseMotionListener {
             equipe.setPosClick(e.getPoint());
             equipe.deplacement();
         }else{
+            Point a = e.getPoint();
+            equipe.GetBoutique().selectionneB(a);
             for(int i=0; i<equipe.getTeam().size(); i++){
-                Point a = e.getPoint();
                 equipe.getTeam().get(i).selectionne(a);
             }
             System.out.println("Left click");
@@ -33,15 +34,22 @@ public class MouseClickR implements MouseListener, MouseMotionListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        selectedZone = new Rectangle(e.getX(), e.getY(), 0, 0);
-        equipe.SetzoneSelection(new ZoneSelection(selectedZone));
+        if(e.getButton() == MouseEvent.BUTTON1){
+            System.out.println("left click Pressed");
+            selectedZone = new Rectangle(e.getX(), e.getY(), 0, 0);
+            equipe.SetzoneSelection(new ZoneSelection(selectedZone));
+            System.out.println("left click Pressed2");
+        }
     }
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        selectedZone.width = e.getX() - selectedZone.x;
-        selectedZone.height = e.getY() - selectedZone.y;
-        equipe.getZoneSelection().setSelectedZone(selectedZone.width, selectedZone.height);
+        /*if click gauche enfoncé*/
+        if(e.getModifiersEx() == MouseEvent.BUTTON1_DOWN_MASK){
+            selectedZone.width = e.getX() - selectedZone.x;
+            selectedZone.height = e.getY() - selectedZone.y;
+            equipe.getZoneSelection().setSelectedZone(selectedZone.width, selectedZone.height);
+        }
     }
 
     @Override
@@ -51,14 +59,18 @@ public class MouseClickR implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        for(int i=0; i<equipe.getTeam().size(); i++){
-            Point p1 = new Point(equipe.getZoneSelection().getXRectangle(), equipe.getZoneSelection().getYRectangle());
-            Point p2 = new Point(equipe.getZoneSelection().getXRectangle() + equipe.getZoneSelection().getwitdhRectangle(), equipe.getZoneSelection().getYRectangle() + equipe.getZoneSelection().getheightRectangle());
-            equipe.getTeam().get(i).selectionneZone(p1, p2);
+        if(e.getButton() == MouseEvent.BUTTON1) {
+            System.out.println("left click Released");
+            for (int i = 0; i < equipe.getTeam().size(); i++) {
+                Point p1 = new Point(equipe.getZoneSelection().getXRectangle(), equipe.getZoneSelection().getYRectangle());
+                Point p2 = new Point(equipe.getZoneSelection().getXRectangle() + equipe.getZoneSelection().getwitdhRectangle(), equipe.getZoneSelection().getYRectangle() + equipe.getZoneSelection().getheightRectangle());
+                equipe.getTeam().get(i).selectionneZone(p1, p2);
+            }
+            selectedZone.width = 0;
+            selectedZone.height = 0;
+            equipe.getZoneSelection().setSelectedZone(selectedZone.width, selectedZone.height);
+            System.out.println("left click Released2");
         }
-        selectedZone.width = 0;
-        selectedZone.height = 0;
-        equipe.getZoneSelection().setSelectedZone(selectedZone.width, selectedZone.height);
 
     }
 

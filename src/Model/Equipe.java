@@ -12,6 +12,7 @@ public class Equipe {
     private boolean[] selected;
     private ArrayList<Integer> currentChamp;
     private ZoneSelection zoneSelection;
+    private Boutique boutique;
 
     public ArrayList<Hero> getTeam(){return  list_hero;}
     public void setPosClick(Point p){posClick = p;}
@@ -34,7 +35,7 @@ public class Equipe {
         this.map = carte;
         Hero tim = new Hero(map, newID(),true, 0, 0);
         Hero jhon = new Hero(map, newID(),false,  20, 20);
-        Boutique b = new Boutique(map, 260, 40);
+        boutique  = new Boutique(map);
         list_hero.add(tim);
         list_hero.add(jhon);
         zoneSelection = new ZoneSelection(new Rectangle(0,0,0,0));
@@ -50,4 +51,9 @@ public class Equipe {
     public ZoneSelection getZoneSelection() {
         return zoneSelection;
     }
+
+    public Boutique GetBoutique(){
+        return boutique;
+    }
+
 }

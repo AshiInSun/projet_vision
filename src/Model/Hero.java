@@ -77,6 +77,7 @@ public class Hero {
     }
 
     public void selectionneZone(Point p1, Point p2){
+        selected = false;
         if(p1.x<p2.x){
             if(p1.y<p2.y){
                 if(Hitbox.in(new Point(pos_x, pos_y), p1, p2.x-p1.x, p2.y-p1.y)){
