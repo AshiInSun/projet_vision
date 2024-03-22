@@ -8,7 +8,8 @@ public class Monstre {
     private int id;
     private boolean is_doing = false;
     public Carte map;
-    private int tileSize=40;
+    private int tileSize= map.getTILESIZE();
+    //centre des deplacements du monstre
     private Point center;
     private ArrayList<Point> CASES = new ArrayList<Point>();
     private Point pos;
@@ -16,6 +17,8 @@ public class Monstre {
     public int avancement_y=0;
     private int PV = 50;
     private int AD = 10;
+
+    //getters and setters
 
     public Point getPos(){return pos;}
     public void setPos(Point p){pos = p;}
@@ -31,6 +34,8 @@ public class Monstre {
     public void setY(int y){pos.y = y;}
     public int getX(){return pos.x;}
     public int getY(){return pos.y;}
+
+    //méthode qui retourne les cases voisines de centre
 
     public ArrayList<Point> voisins(Point centre){
         ArrayList<Point> res = new ArrayList<>();

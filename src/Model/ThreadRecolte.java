@@ -16,6 +16,7 @@ public class ThreadRecolte extends Thread{
     @Override
     public void run(){
         hero.setIs_doing(true);
+        //le timer correspond a la longueur de la barre de progression à remplir
         while (timer>0){
             try {
                 Thread.sleep(DELAY);
@@ -25,8 +26,9 @@ public class ThreadRecolte extends Thread{
                 e.printStackTrace();
             }
         }
+        //on a fini de récolter, on remet la barre de progression à 0
         hero.barre_progression = 0;
-
+        //on lance la méthode de récolte (la case change, thread de repousse)
         hero.map.recolte(tile.x, tile.y);
         hero.plusBle();
         System.out.println(hero.getBle());

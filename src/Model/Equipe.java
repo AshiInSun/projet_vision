@@ -4,12 +4,14 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Equipe {
+    //liste des héros de l'équipe
     private ArrayList<Hero> list_hero = new ArrayList<Hero>();
     private Carte map;
+
+    //position du dernier clic
     private Point posClick;
+    //id pour les héros et nn pas de l'équipe
     private int id=0;
-    private boolean[] selected;
-    private ArrayList<Integer> currentChamp;
 
     public ArrayList<Hero> getTeam(){return  list_hero;}
     public void setPosClick(Point p){posClick = p;}
@@ -34,8 +36,8 @@ public class Equipe {
         this.map = carte;
         Hero tim = new Hero(map, newID());
         list_hero.add(tim);
-        ///Il faudra faire un thread de deplacement par connard
-        //ThreadDeplacement tDeplacement = new ThreadDeplacement(list_hero.get(0));
-        //tDeplacement.start();
+        ///Il faudra faire un thread de deplacement par héro
+        ThreadDeplacement tDeplacement = new ThreadDeplacement(list_hero.get(0));
+        tDeplacement.start();
     }
 }

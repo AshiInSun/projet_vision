@@ -8,10 +8,11 @@ public class Tile {
     public int type; //0 = herbe, 1 = eau, 2 = blé, 3 = blé coupé, 4 = blé en phase de repousse
     //6 = herbe avec eau sur la gauche 7 = ilot relié a gauche
     public BufferedImage image;
-    public boolean colision = false;
     public int pos_x;
     public int pos_y;
 
+
+    //probablement pas optimal mais vachement facile a faire
     public Tile(int x, int y, int type){
         pos_x = x;
         pos_y = y;

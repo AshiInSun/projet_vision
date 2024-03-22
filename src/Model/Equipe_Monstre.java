@@ -7,20 +7,9 @@ import java.util.ArrayList;
 public class Equipe_Monstre {
     private ArrayList<Monstre> list_monstre = new ArrayList<Monstre>();
     private Carte map;
-    private Point posClick;
     private int id=0;
-    private boolean[] selected;
-    private ArrayList<Integer> currentChamp;
 
     public ArrayList<Monstre> getTeam(){return  list_monstre;}
-    public void setPosClick(Point p){posClick = p;}
-
-    public void deplacement(){
-        for (int i = 0; i < list_monstre.size(); i++) {
-
-        }
-    }
-
 
     private int newID(){int temp = id; id++; return temp;}
 

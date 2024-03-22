@@ -5,24 +5,27 @@ import java.util.ArrayList;
 
 public class Hero {
     public Carte map;
+    //si new_move est true, le thread de deplacement doit recalculer le chemin
     private boolean new_move = false;
+    //cible est la case ou le hero veut se rendre
+    private Point cible;
     private int pos_x;
     private int pos_y;
+    //tile_checked est true si le thread de check a vérifié la case (ce thread de check lance les récoltes, les combats, etc...)
     public boolean tile_checked=true;
-    int id_thread=0;
-    public int avancement_x=0;
-    public int avancement_y=0;
+    //is_doing est true si le hero est en train de faire une action autre que dépalcement
     private boolean is_doing = false;
+    //barre_progression est la barre de progression de l'action en cours (récolte, combat, etc...)
     public int barre_progression=0;
     private int id;
-    private ThreadDeplacement tDeplacement = null; // c'est le thread utilisé pour faire le déplacement, qui vaut null
-    // au départ ou lorsque le déplacement est fini, et qui vaut autre chose si ismoving = true
 
     //stats
     private int PV = 100;
     private int AD = 20;
 
     private int ble=0;
+
+    //getters et setters
 
     public int getX(){return pos_x;}
     public void incrX(){pos_x+=1;}
@@ -41,35 +44,27 @@ public class Hero {
     public boolean getNew_move(){return new_move;}
     public void setNew_move(boolean b){new_move=b;}
     public Carte getMap(){return map;}
+    public Point getCible(){return cible;}
 
     public Hero(Carte carte, int id){
         this.id = id;
         this.map = carte;
         this.pos_x = 240;
         this.pos_y = 160;
+        //threaad qui check les cases et lance les actions (récolte, combat, etc...)
         ThreadChecked tChecked = new ThreadChecked(this);
         tChecked.start();
     }
 
+    //méthode de déplacement, envoie la cible au thread de déplacement
     public void deplacement(Point cible){
         if(!is_doing) {
-            if(tDeplacement!=null){
-                tDeplacement.stopMoving();
-                try {
-                    tDeplacement.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                tDeplacement = null;
-            }
-            // ici calcul du chemin, par précaution tu peux faire un join sur le thread.
-
-            tDeplacement = new ThreadDeplacement(this, cible);
-            tDeplacement.start();
+            this.cible = cible;
+            new_move = true;
         }
     }
 
-
+    //méthode de récolte, envoie la case à récolter au thread de récolte si la case est récoltable (i.e. type==2)
     public void recolte(){
         int j = pos_x/40;
         int i = pos_y/40;

@@ -15,6 +15,7 @@ public class ThreadChecked extends Thread{
     public void run(){
 
         while (true){
+            //si une case n'est pas check, on lance les actions (récolte, combat, etc...) c'est les actions qui verifiront si la case est recoltable par exemple
             if(!hero.tile_checked){
                 hero.recolte();
                 hero.tile_checked = true;

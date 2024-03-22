@@ -5,6 +5,7 @@ public class ThreadRepousse extends Thread{
     private int index;
     public int DELAY=5000;
 
+    //le blé a été coupé, on attend 5 secondes avant de le faire repousser d'un etat puis du suivant
     public ThreadRepousse(Carte carte, int index){
         this.carte = carte;
         this.index = index;
