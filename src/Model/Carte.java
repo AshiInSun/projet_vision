@@ -15,6 +15,7 @@ public class Carte {
     //Taille de la carte
     private static final Point SIZEMAP = new Point(28, 17);
     //Tableau de toutes les tiles, dans l'ordre (ie tiles[30] = la tile en (1,2) (x*28 + y))
+    private Inventory inventaire;
     private Tile[] tiles;
     //version en tableau de carte_data.txt
     private int numMap[][];
@@ -24,6 +25,7 @@ public class Carte {
     private Hashtable<Point,Point> parent = new Hashtable<Point,Point>();
 //taille d'une tile (carré)
     private int TILESIZE = 40;
+    private ArrayList<String> mapList = new ArrayList<String>();
 
 
     public Point getSizeMap(){return SIZEMAP;}
@@ -32,22 +34,12 @@ public class Carte {
     public int getTILESIZE(){return TILESIZE;}
 
 
-    public Carte(){
-        numMap = new int[SIZEMAP.y][SIZEMAP.x];
-        //on charge la carte
-        loadMap();
-        loadTile();
-//        tiles = new Tile[10];
-//        tiles[0] = new Tile(0, 0, 1);
-//        tiles[1] = new Tile(40, 0, 0);
-
-    }
 
     //fonction qui convertit le fichier carte_data.txt en tableau de int
-    public void loadMap(){
-        InputStream is = getClass().getResourceAsStream("/img/carte_data.txt");
+    public void loadMap(String map){
+        InputStream is = getClass().getResourceAsStream(map);
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
-
+        int [][] numMap = new int[SIZEMAP.y][SIZEMAP.x];
         for (int i = 0; i < SIZEMAP.y; i++) {
             String line;
             try {
@@ -61,12 +53,13 @@ public class Carte {
                 numMap[i][j] = typ;
             }
         }
+        this.numMap = numMap;
     }
 
     //fonction qui charge les tiles en fonction du tableau de int
     public void loadTile(){
         int x; int y=0; int index=0;
-        tiles = new Tile[numMap.length*numMap[0].length];
+        Tile[] tiles = new Tile[numMap.length*numMap[0].length];
         for (int i = 0; i < numMap.length; i++) {
             x=0;
             for (int j = 0; j < numMap[i].length; j++) {
@@ -76,8 +69,19 @@ public class Carte {
             }
             y+=40;
         }
+        this.tiles = tiles;
     }
 
+    public Carte(){
+        mapList.add("/img/carte_data.txt");
+        mapList.add("/img/carte_data2.txt");
+        loadMap(mapList.get(0));
+        loadTile();
+//        tiles = new Tile[10];
+//        tiles[0] = new Tile(0, 0, 1);
+//        tiles[1] = new Tile(40, 0, 0);
+
+        }
     //fonction qui renvoie les voisisn d'un point (i.e. les points accessibles depuis ce point (i.e. pas des murs))
     public ArrayList<Point> voisins (Point p, ArrayList<Point> deja_vu){
         ArrayList<Point> res = new ArrayList<Point>();
@@ -210,5 +214,10 @@ public class Carte {
         tiles[index] = new Tile(tiles[index].pos_x, tiles[index].pos_y, 3);
         ThreadRepousse threadRepousse = new ThreadRepousse(this, index);
         threadRepousse.start();
+    }
+
+    public void changeMap(){
+        loadMap(mapList.get(1));
+        loadTile();
     }
 }

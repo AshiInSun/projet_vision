@@ -13,17 +13,17 @@ public class ThreadRepousse extends Thread{
 
     @Override
     public void run(){
-            try {
-                Thread.sleep(DELAY);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            carte.getTiles()[index] = new Tile(carte.getTiles()[index].pos_x, carte.getTiles()[index].pos_y, 4);
-            try {
-                Thread.sleep(DELAY);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            carte.getTiles()[index] = new Tile(carte.getTiles()[index].pos_x, carte.getTiles()[index].pos_y, 2);
+        try {
+            Thread.sleep(DELAY);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        carte.getTiles()[index] = new Tile(carte.getTiles()[index].pos_x, carte.getTiles()[index].pos_y, 4);
+        try {
+            Thread.sleep(DELAY);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        carte.getTiles()[index] = new Tile(carte.getTiles()[index].pos_x, carte.getTiles()[index].pos_y, 2);
     }
 }

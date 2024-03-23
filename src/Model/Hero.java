@@ -2,6 +2,8 @@ package Model;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Observer;
 
 public class Hero {
     public Carte map;
@@ -24,6 +26,7 @@ public class Hero {
     private int AD = 20;
 
     private int ble=0;
+    private int pierre=0;
 
     //getters et setters
 
@@ -36,9 +39,13 @@ public class Hero {
     public int getY(){return pos_y;}
     public void setY(int y){pos_y=y;}
     public int getID(){return id;}
+
     public void setID(int i){this.id = i;}
     public void plusBle(){this.ble++;}
     public int getBle(){return this.ble;}
+    public int getPierre() {
+        return pierre;
+    }
     public boolean is_doing(){return is_doing;}
     public void setIs_doing(boolean b){is_doing=b;}
     public boolean getNew_move(){return new_move;}

@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="djistrka presque fonctionel: manque le changement de chemin en cours de route et la gestion de l'obstacle comme case cible">
+    <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="ajout map">
+      <change afterPath="$PROJECT_DIR$/src/img/coin_hautG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/eau_herbeG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/herbe_eauG.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Equipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Equipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Equipe_Monstre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Equipe_Monstre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Hitbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hitbox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Monstre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Monstre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ThreadChecked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ThreadChecked.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ThreadDeplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ThreadDeplacement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ThreadRecolte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ThreadRecolte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ThreadRepousse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ThreadRepousse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/carte_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/carte_data.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,11 +25,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -56,25 +44,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "tim",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Model" />
@@ -101,13 +88,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-249ae16d76d6-36550cda" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -119,8 +99,6 @@
       <workItem from="1707730842755" duration="9803000" />
       <workItem from="1707766100953" duration="6344000" />
       <workItem from="1707856722296" duration="5200000" />
-      <workItem from="1710628330741" duration="4488000" />
-      <workItem from="1711141454400" duration="3792000" />
     </task>
     <task id="LOCAL-00001" summary="first commit movement fluid">
       <option name="closed" value="true" />

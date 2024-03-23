@@ -3,6 +3,7 @@ package Vue;
 import Model.Carte;
 import Model.Equipe;
 import Model.Equipe_Monstre;
+import Model.Inventory;
 import Model.Tile;
 
 import javax.imageio.ImageIO;
@@ -23,6 +24,10 @@ public class Affichage extends JPanel {
         this.list_hero = list_hero;
         this.list_monstre = list_monstre;
         setPreferredSize(new Dimension(1120, 680));
+    }
+
+    public Carte getCarte() {
+        return carte;
     }
 
     @Override
