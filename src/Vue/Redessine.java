@@ -1,5 +1,10 @@
 package Vue;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import static com.sun.java.accessibility.util.AWTEventMonitor.addKeyListener;
+
 public class Redessine extends Thread{
     private Affichage affichage;
     private InventoryVue inventoryVue;
@@ -8,6 +13,7 @@ public class Redessine extends Thread{
     public Redessine(Affichage affichage, InventoryVue inventaire){
         this.affichage = affichage;
         this.inventoryVue = inventaire;
+
     }
 
     @Override
@@ -15,7 +21,6 @@ public class Redessine extends Thread{
         while (true){
             affichage.revalidate();
             affichage.repaint();
-            inventoryVue.getInventory().updateBle();
             inventoryVue.updateBleQuantity();
             inventoryVue.revalidate();
             inventoryVue.repaint();
@@ -26,4 +31,5 @@ public class Redessine extends Thread{
             }
         }
     }
+
 }

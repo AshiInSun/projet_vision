@@ -8,11 +8,13 @@ import Vue.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Main {
     public static final int WIDTH = 1120;
     public static final int HEIGHT = 680;
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         JFrame maFenetre = new JFrame("projet_vision");
         maFenetre.setSize(WIDTH, HEIGHT);
@@ -30,7 +32,7 @@ public class Main {
         panel.setOpaque(true);
 
         InventoryVue inventoryVue = new InventoryVue(inventaire);
-        inventoryVue.setBounds(WIDTH-200, HEIGHT-575, 200, 500);
+        inventoryVue.setBounds(WIDTH-115, HEIGHT-575, 115, 200);
 
         Redessine redessine = new Redessine(panel, inventoryVue);
 
@@ -42,6 +44,16 @@ public class Main {
 
         maFenetre.add(layeredPane);
         panel.addMouseListener(mouseR);
+
+        //test
+        /*panel.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                carte.changeMap();
+            }
+        });
+
+         */
+
         redessine.start();
         maFenetre.pack();
         maFenetre.setVisible(true);

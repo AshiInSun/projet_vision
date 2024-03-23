@@ -6,13 +6,11 @@ import java.awt.*;
 
 public class Item {
     private ItemType type;
-    private Image image;
     private int quantity;
 
     public Item(ItemType type) {
         this.type = type;
         this.quantity = 0;
-        this.image = new ImageIcon("/img/ble.png").getImage();
     }
 
     // getters and setters
@@ -25,10 +23,6 @@ public class Item {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
 
-    }
-
-    public Image getImage() {
-        return image;
     }
 
     public void incrementQuantity() {

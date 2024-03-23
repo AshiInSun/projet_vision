@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class Carte {
 
@@ -15,6 +16,7 @@ public class Carte {
     private int numMap[][];
     private int avancement_x=0;
     private int avancement_y=0;
+    private ArrayList<String> mapList = new ArrayList<String>();
 
 
     public int getAvancement_x(){return avancement_x;}
@@ -23,10 +25,10 @@ public class Carte {
     public int[][] getNumMap(){return numMap;}
     public Tile[] getTiles(){return tiles;}
 
-    public void loadMap(){
-        InputStream is = getClass().getResourceAsStream("/img/carte_data.txt");
+    public void loadMap(String map){
+        InputStream is = getClass().getResourceAsStream(map);
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
-
+        int [][] numMap = new int[SIZEMAP.y][SIZEMAP.x];
         for (int i = 0; i < SIZEMAP.y; i++) {
             String line;
             try {
@@ -40,11 +42,12 @@ public class Carte {
                 numMap[i][j] = typ;
             }
         }
+        this.numMap = numMap;
     }
 
     public void loadTile(){
         int x; int y=0; int index=0;
-        tiles = new Tile[numMap.length*numMap[0].length];
+        Tile[] tiles = new Tile[numMap.length*numMap[0].length];
         for (int i = 0; i < numMap.length; i++) {
             x=0;
             for (int j = 0; j < numMap[i].length; j++) {
@@ -54,11 +57,13 @@ public class Carte {
             }
             y+=40;
         }
+        this.tiles = tiles;
     }
 
     public Carte(){
-        numMap = new int[SIZEMAP.y][SIZEMAP.x];
-        loadMap();
+        mapList.add("/img/carte_data.txt");
+        mapList.add("/img/carte_data2.txt");
+        loadMap(mapList.get(0));
         loadTile();
 //        tiles = new Tile[10];
 //        tiles[0] = new Tile(0, 0, 1);
@@ -71,5 +76,10 @@ public class Carte {
         tiles[index] = new Tile(tiles[index].pos_x, tiles[index].pos_y, 3);
         ThreadRepousse threadRepousse = new ThreadRepousse(this, index);
         threadRepousse.start();
+    }
+
+    public void changeMap(){
+        loadMap(mapList.get(1));
+        loadTile();
     }
 }

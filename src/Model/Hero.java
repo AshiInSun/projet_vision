@@ -14,6 +14,7 @@ public class Hero {
     private int id;
 
     private int ble=0;
+    private int pierre=0;
 
     public int getX(){return pos_x - map.getAvancement_x();}
     public void setX(int x){pos_x=x;}
@@ -34,6 +35,10 @@ public class Hero {
 
     public int getBle() {
         return ble;
+    }
+
+    public int getPierre() {
+        return pierre;
     }
 
     public void deplacement(Point posClick){

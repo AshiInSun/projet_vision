@@ -22,6 +22,10 @@ public class Affichage extends JPanel {
         this.list_hero = list_hero;
     }
 
+    public Carte getCarte() {
+        return carte;
+    }
+
     @Override
     public void paint(Graphics g){
 

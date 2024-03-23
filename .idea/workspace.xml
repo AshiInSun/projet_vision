@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db659f76-944c-4add-930a-6cac28768579" name="Changes" comment="ajout inventaire et la vue de l'inventaire">
+      <change afterPath="$PROJECT_DIR$/src/img/carte_data2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/MouseClickR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/MouseClickR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ItemType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Affichage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vue/InventoryVue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/InventoryVue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/Redessine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vue/Redessine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +129,8 @@
       <workItem from="1710162660074" duration="1092000" />
       <workItem from="1710163780072" duration="5175000" />
       <workItem from="1710508409089" duration="177000" />
-      <workItem from="1710767289041" duration="1190000" />
+      <workItem from="1710767289041" duration="6745000" />
+      <workItem from="1710776983787" duration="248000" />
     </task>
     <task id="LOCAL-00001" summary="first commit movement fluid">
       <option name="closed" value="true" />
@@ -149,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710163644468</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ajout inventaire et la vue de l'inventaire">
+      <option name="closed" value="true" />
+      <created>1710768509444</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710768509444</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
