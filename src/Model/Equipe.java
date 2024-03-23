@@ -25,12 +25,15 @@ public class Equipe {
     /** cette méthode est appelée lorsqu'on clic pour demander un déplacement */
     public void deplacement(){
         Point cible = new Point(posClick.x/map.getTILESIZE(), posClick.y/map.getTILESIZE());
-        map.update_chemin(cible);
 
-        if (!list_hero.isEmpty()) {
-            for(int i = 0; i<list_hero.size(); i++){
-                if(list_hero.get(i).getSelected()){
-                    list_hero.get(i).deplacement(posClick);
+        //on verifie qu'on clique pas sur un mur
+        if(!(map.getNumMap()[cible.y][cible.x]==1)){
+            map.update_chemin(cible);
+            if (!list_hero.isEmpty()) {
+                for(int i = 0; i<list_hero.size(); i++){
+                    if(list_hero.get(i).getSelected()){
+                        list_hero.get(i).deplacement(cible);
+                    }
                 }
             }
         }
@@ -45,15 +48,12 @@ public class Equipe {
 
     public Equipe(Carte carte){
         this.map = carte;
-        Hero tim = new Hero(map, newID(),true, 0, 0);
-        Hero jhon = new Hero(map, newID(),false,  20, 20);
+        Hero tim = new Hero(map, newID(),true, 240, 200);
+        Hero jhon = new Hero(map, newID(),false,  200, 160);
         boutique  = new Boutique(map);
         list_hero.add(tim);
         list_hero.add(jhon);
         zoneSelection = new ZoneSelection(new Rectangle(0,0,0,0));
-        ///Il faudra faire un thread de deplacement par connard
-        ThreadDeplacement tDeplacement = new ThreadDeplacement(list_hero.get(0));
-        tDeplacement.start();
     }
 
     public void SetzoneSelection(ZoneSelection zoneSelection){

@@ -194,10 +194,9 @@ public class Carte {
     //fonction qui renvoie le chemin le plus court, dans le code on met le point de départ. le point d'arrivé est celui mis dans la précédente update_chemin() (djistrka)
 
     public ArrayList<Point> calcul_chemin(Point cible) {
+        ArrayList<Point> res = new ArrayList<Point>();
         // vérifier que cible est accessible (donc elle est dans distance/parent)
         // sinon renvoyer un chemin null
-
-        ArrayList<Point> res = new ArrayList<Point>();
         while (parent.get(cible).x!=-1){
             res.add(cible);
             cible = parent.get(cible);

@@ -70,6 +70,7 @@ public class Hero {
         this.pos_x = x;
         this.pos_y = y;
         this.selected = b;
+        //thread de deplacement
         ThreadDeplacement tDeplacement = new ThreadDeplacement(this);
         tDeplacement.start();
         //threaad qui check les cases et lance les actions (récolte, combat, etc...)

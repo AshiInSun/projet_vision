@@ -16,10 +16,12 @@ public class ThreadDeplacement extends Thread{
     private int i=1; //indice du chemin
     private int avancement_x=0;
     private int avancement_y=0;
+    private Carte map;
 
 
     public ThreadDeplacement(Hero hero){
         this.hero = hero;
+        this.map = hero.getMap();
     }
 
     @Override
@@ -29,8 +31,8 @@ public class ThreadDeplacement extends Thread{
             if(hero.getNew_move()){
                 //on recalcule le chemin
                 cible = hero.getCible();
-                chemin = hero.getMap().calcul_chemin(new Point(hero.getX()/hero.getMap().getTILESIZE(), hero.getY()/hero.getMap().getTILESIZE()));
-                chemin.add(cible);
+                chemin = hero.getMap().calcul_chemin(new Point(hero.getX()/map.getTILESIZE(), hero.getY()/map.getTILESIZE()));
+                chemin.add(new Point(cible.x, cible.y));
                 hero.setNew_move(false);
             }
 

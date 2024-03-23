@@ -31,7 +31,6 @@ public class ThreadRecolte extends Thread{
         //on lance la méthode de récolte (la case change, thread de repousse)
         hero.map.recolte(tile.x, tile.y);
         hero.plusBle();
-        System.out.println(hero.getBle());
         hero.setIs_doing(false);
     }
 }

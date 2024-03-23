@@ -60,12 +60,18 @@ public class Affichage extends JPanel {
 
         //AFFICHAGE HERO
         for (int i = 0; i < list_hero.getTeam().size() ; i++) {
+            //affichage des heros, blanc si selectionné, noir sinon
             if(list_hero.getTeam().get(i).getSelected()){
                 g.setColor(Color.white);
-                g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
+                g.fillOval(list_hero.getTeam().get(i).getX()+10, list_hero.getTeam().get(i).getY()+10, 20, 20);
             }else{
                 g.setColor(Color.black);
-                g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
+                g.fillOval(list_hero.getTeam().get(i).getX()+10, list_hero.getTeam().get(i).getY()+10, 20, 20);
+            }
+            //affichage de la barre de progression des taches
+            if(list_hero.getTeam().get(i).is_doing()){
+                g.setColor(Color.GREEN);
+                g.fillRect(list_hero.getTeam().get(i).getX()-5, list_hero.getTeam().get(i).getY()-20, (list_hero.getTeam().get(i).barre_progression)/58, 10);//valeur un peu random mais tkt ça marche bien
             }
         }
 

@@ -20,10 +20,8 @@ public class Boutique {
         int y = a.y/40;
         if(map.getNumMap()[y][x] == 5){
             selected = true;
-            System.out.println("boutique selectionné");
         }else{
             selected = false;
-            System.out.println("boutique pas selectionné");
         }
     }
 }
