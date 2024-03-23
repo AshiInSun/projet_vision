@@ -37,7 +37,6 @@ public class Main {
         MouseClickR mouseR = new MouseClickR(equipe);
         Affichage panel = new Affichage(equipe, carte, meute);
 
-        Affichage panel = new Affichage(equipe, carte);
         panel.setBounds(0,0,WIDTH,HEIGHT);
         panel.setOpaque(true);
 

@@ -8,7 +8,7 @@ public class Monstre {
     private int id;
     private boolean is_doing = false;
     public Carte map;
-    private int tileSize= map.getTILESIZE();
+    private int tileSize;
     //centre des deplacements du monstre
     private Point center;
     private ArrayList<Point> CASES = new ArrayList<Point>();
@@ -60,10 +60,10 @@ public class Monstre {
     public Monstre(Point pos, int id, Carte map){
         this.pos = pos;
         this.center = pos;
+        this.tileSize = map.getTILESIZE();
         this.CASES = voisins(center);
         this.id = id;
         this.map = map;
-        this.tileSize = map.getTILESIZE();
     }
 
     public void deplace(){
