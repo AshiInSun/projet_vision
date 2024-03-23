@@ -20,6 +20,7 @@ public class Hero {
     //barre_progression est la barre de progression de l'action en cours (récolte, combat, etc...)
     public int barre_progression=0;
     private int id;
+    private boolean selected = false;
 
     //stats
     private int PV = 100;
@@ -63,6 +64,19 @@ public class Hero {
         tChecked.start();
     }
 
+    public Hero(Carte carte, int id, boolean b,int  x, int y){
+        this.id = id;
+        this.map = carte;
+        this.pos_x = x;
+        this.pos_y = y;
+        this.selected = b;
+        ThreadDeplacement tDeplacement = new ThreadDeplacement(this);
+        tDeplacement.start();
+        //threaad qui check les cases et lance les actions (récolte, combat, etc...)
+        ThreadChecked tChecked = new ThreadChecked(this);
+        tChecked.start();
+    }
+
     //méthode de déplacement, envoie la cible au thread de déplacement
     public void deplacement(Point cible){
         if(!is_doing) {
@@ -86,4 +100,49 @@ public class Hero {
         //a faire starfoullah ça va etre chiant de fou
     }
 
+    public void setSelected(boolean b){
+        selected = b;
+    }
+
+    public boolean getSelected(){
+        return selected;
+    }
+
+    public void selectionne(Point p){
+//        System.out.println(p.x);
+//        System.out.println(p.y);
+//        System.out.println(pos_x);
+//        System.out.println(pos_y);
+//        System.out.println(Hitbox.in(p, new Point(pos_x, pos_y), -30, -30));
+        if(Hitbox.in(p, new Point(pos_x, pos_y), 20, 20)){
+            selected = true;
+        }else{
+            selected = false;
+        }
+    }
+
+    public void selectionneZone(Point p1, Point p2){
+        selected = false;
+        if(p1.x<p2.x){
+            if(p1.y<p2.y){
+                if(Hitbox.in(new Point(pos_x, pos_y), p1, p2.x-p1.x, p2.y-p1.y)){
+                    selected = true;
+                }
+            }else{
+                if(Hitbox.in(new Point(pos_x, pos_y), new Point(p1.x, p2.y), p2.x-p1.x, p1.y-p2.y)){
+                    selected = true;
+                }
+            }
+        }else{
+            if(p1.y<p2.y){
+                if(Hitbox.in(new Point(pos_x, pos_y), new Point(p2.x, p1.y), p1.x-p2.x, p2.y-p1.y)){
+                    selected = true;
+                }
+            }else{
+                if(Hitbox.in(new Point(pos_x, pos_y), p2, p1.x-p2.x, p1.y-p2.y)){
+                    selected = true;
+                }
+            }
+        }
+    }
 }

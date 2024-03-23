@@ -13,6 +13,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+import static java.lang.Math.abs;
+
 public class Affichage extends JPanel {
 
     private Equipe_Monstre list_monstre;
@@ -58,12 +60,23 @@ public class Affichage extends JPanel {
 
         //AFFICHAGE HERO
         for (int i = 0; i < list_hero.getTeam().size() ; i++) {
-            g.setColor(Color.BLACK);
-            g.fillOval(list_hero.getTeam().get(i).getX()+list_hero.getMap().getTILESIZE()/4, list_hero.getTeam().get(i).getY()+list_hero.getMap().getTILESIZE()/4, 20, 20);
-            if(list_hero.getTeam().get(i).is_doing()){
-                g.setColor(Color.GREEN);
-                g.fillRect(list_hero.getTeam().get(i).getX()-5, list_hero.getTeam().get(i).getY()-20, (list_hero.getTeam().get(i).barre_progression)/58, 10);//valeur un peu random mais tkt ça marche bien
+            if(list_hero.getTeam().get(i).getSelected()){
+                g.setColor(Color.white);
+                g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
+            }else{
+                g.setColor(Color.black);
+                g.fillOval(list_hero.getTeam().get(i).getX(), list_hero.getTeam().get(i).getY(), 20, 20);
             }
         }
+
+        if(list_hero.getZoneSelection().getheightRectangle() != 0 || list_hero.getZoneSelection().getwitdhRectangle() != 0){
+            int x = Math.min(list_hero.getZoneSelection().getXRectangle(), list_hero.getZoneSelection().getXRectangle() + list_hero.getZoneSelection().getwitdhRectangle());
+            int y = Math.min(list_hero.getZoneSelection().getYRectangle(), list_hero.getZoneSelection().getYRectangle() + list_hero.getZoneSelection().getheightRectangle());
+            int width = abs(list_hero.getZoneSelection().getwitdhRectangle());
+            int height = abs(list_hero.getZoneSelection().getheightRectangle());
+            g.setColor(Color.red);
+            g.drawRect(x, y, width, height);
+        }
+
     }
 }

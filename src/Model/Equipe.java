@@ -2,6 +2,7 @@ package Model;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.awt.Rectangle;
 
 public class Equipe {
     //liste des héros de l'équipe
@@ -12,6 +13,10 @@ public class Equipe {
     private Point posClick;
     //id pour les héros et nn pas de l'équipe
     private int id=0;
+    private boolean[] selected;
+    private ArrayList<Integer> currentChamp;
+    private ZoneSelection zoneSelection;
+    private Boutique boutique;
 
     public ArrayList<Hero> getTeam(){return  list_hero;}
     public void setPosClick(Point p){posClick = p;}
@@ -23,8 +28,11 @@ public class Equipe {
         map.update_chemin(cible);
 
         if (!list_hero.isEmpty()) {
-                // sur un seul héros pour l'instant
-                list_hero.get(0).deplacement(cible);
+            for(int i = 0; i<list_hero.size(); i++){
+                if(list_hero.get(i).getSelected()){
+                    list_hero.get(i).deplacement(posClick);
+                }
+            }
         }
     }
 
@@ -37,10 +45,27 @@ public class Equipe {
 
     public Equipe(Carte carte){
         this.map = carte;
-        Hero tim = new Hero(map, newID());
+        Hero tim = new Hero(map, newID(),true, 0, 0);
+        Hero jhon = new Hero(map, newID(),false,  20, 20);
+        boutique  = new Boutique(map);
         list_hero.add(tim);
-        ///Il faudra faire un thread de deplacement par héro
+        list_hero.add(jhon);
+        zoneSelection = new ZoneSelection(new Rectangle(0,0,0,0));
+        ///Il faudra faire un thread de deplacement par connard
         ThreadDeplacement tDeplacement = new ThreadDeplacement(list_hero.get(0));
         tDeplacement.start();
     }
+
+    public void SetzoneSelection(ZoneSelection zoneSelection){
+        this.zoneSelection = zoneSelection;
+    }
+
+    public ZoneSelection getZoneSelection() {
+        return zoneSelection;
+    }
+
+    public Boutique GetBoutique(){
+        return boutique;
+    }
+
 }
