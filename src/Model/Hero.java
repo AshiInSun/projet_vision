@@ -53,6 +53,9 @@ public class Hero {
     public void setNew_move(boolean b){new_move=b;}
     public Carte getMap(){return map;}
     public Point getCible(){return cible;}
+    public Point getPos(){return new Point(pos_x, pos_y);}
+    public Point getNumPos(){return new Point(pos_x/map.getTILESIZE(), pos_y/map.getTILESIZE());}
+    public boolean isSelected(){return selected;}
 
     public Hero(Carte carte, int id){
         this.id = id;
@@ -115,7 +118,7 @@ public class Hero {
 //        System.out.println(pos_x);
 //        System.out.println(pos_y);
 //        System.out.println(Hitbox.in(p, new Point(pos_x, pos_y), -30, -30));
-        if(Hitbox.in(p, new Point(pos_x, pos_y), 20, 20)){
+        if(Hitbox.in(p, new Point(pos_x, pos_y), 30, 30)){
             selected = true;
         }else{
             selected = false;
